@@ -11,7 +11,20 @@ locals {
 }
 
 locals {
-  helm_template_version = "1.34.2"
+  helm_template_version = "1.36.0"
+}
+
+locals {
+  set = [
+    {
+      name = "controller.service.loadBalancerIP"
+      value = var.ip_address
+    },
+    {
+      name = "controller.service.externalTrafficPolicy"
+      value = "Local"
+    }
+  ]
 }
 
 variable "ip_address" {

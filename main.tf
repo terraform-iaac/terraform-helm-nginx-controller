@@ -5,8 +5,11 @@ resource "helm_release" "application" {
   repository = data.helm_repository.estafette.metadata[0].name
   wait = "false"
   version = local.helm_template_version
-  set {
-    name = "controller.service.loadBalancerIP"
-    value = var.ip_address
+  dynamic "set" {
+    for_each = local.set
+    content {
+      name = set.value.name
+      value = set.value.value
+    }
   }
 }
