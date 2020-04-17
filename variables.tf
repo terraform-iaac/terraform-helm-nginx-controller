@@ -23,6 +23,10 @@ locals {
     {
       name = "controller.service.externalTrafficPolicy"
       value = "Local"
+    },
+    {
+      name = "controller.kind"
+      value = "DaemonSet"
     }
   ]
 }
