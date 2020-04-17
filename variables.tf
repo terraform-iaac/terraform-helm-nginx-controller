@@ -11,7 +11,7 @@ locals {
 }
 
 locals {
-  helm_template_version = "1.36.0"
+  helm_template_version = "1.36.2"
 }
 
 locals {
