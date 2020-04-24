@@ -17,6 +17,10 @@ locals {
 locals {
   set = [
     {
+      name = "controller.daemonset.useHostPort"
+      value = "true"
+    },
+    {
       name = "controller.service.loadBalancerIP"
       value = var.ip_address
     },
