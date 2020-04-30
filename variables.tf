@@ -1,20 +1,8 @@
 locals {
   helm_repo_url = "https://kubernetes-charts.storage.googleapis.com"
-}
-
-locals {
   helm_repo_name = "stable"
-}
-
-locals {
   helm_chart = "nginx-ingress"
-}
-
-locals {
   helm_template_version = "1.36.2"
-}
-
-locals {
   set = [
     {
       name = "controller.daemonset.useHostPort"
@@ -36,5 +24,6 @@ locals {
 }
 
 variable "ip_address" {
+  type = string
   description = "(Required) External Static Address for loadbalancer"
 }
