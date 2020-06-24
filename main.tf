@@ -1,7 +1,7 @@
 resource "helm_release" "application" {
   name = local.helm_chart
   chart = local.helm_chart
-  namespace = "kube-system"
+  namespace = var.namespace
   repository = local.helm_repository
   wait = "false"
   version = local.helm_template_version
