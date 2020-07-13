@@ -1,7 +1,7 @@
 locals {
   helm_chart = "nginx-ingress"
   helm_repository = "https://kubernetes-charts.storage.googleapis.com"
-  helm_template_version = "1.39.0"
+  helm_template_version = "1.40.3"
 
   loadBalancerIP = var.ip_address == null ? [] : [
     {
@@ -81,4 +81,9 @@ variable "service_nodePort_https" {
 variable "namespace" {
   type = string
   default = "kube-system"
+}
+
+variable "name" {
+  description = "(Optional) Name of helm release"
+  default = "nginx-ingress"
 }

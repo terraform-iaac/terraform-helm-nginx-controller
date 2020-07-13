@@ -1,5 +1,5 @@
 resource "helm_release" "application" {
-  name = local.helm_chart
+  name = var.name
   chart = local.helm_chart
   namespace = var.namespace
   repository = local.helm_repository
