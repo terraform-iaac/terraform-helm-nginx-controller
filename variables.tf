@@ -21,7 +21,7 @@ locals {
     },
     {
       name = "controller.metrics.serviceMonitor.additionalLabels.release"
-      value = "prometheus-operator"
+      value = "kube-prometheus-stack"
     }
   ] : []
 
