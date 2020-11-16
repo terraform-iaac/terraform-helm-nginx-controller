@@ -3,4 +3,4 @@
 #### Helm provider version <=1.2.1
 Template version: 1.39.0
 
-##### Source: https://github.com/helm/charts/tree/master/stable/nginx-ingress
+##### Source: https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx
