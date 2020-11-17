@@ -6,6 +6,8 @@ resource "helm_release" "application" {
   wait = "false"
   version = local.helm_template_version
 
+  values = var.disable_heavyweight_metrics ? file("${path.module}/templates/metrics-disable.yaml") : null
+
   set {
     name  = "controller.kind"
     value = var.controller_kind
