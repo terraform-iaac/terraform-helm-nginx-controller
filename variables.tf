@@ -1,7 +1,7 @@
 locals {
   helm_chart = "ingress-nginx"
   helm_repository = "https://kubernetes.github.io/ingress-nginx"
-  helm_template_version = "3.3.0"
+  helm_template_version = "3.10.1"
 
   loadBalancerIP = var.ip_address == null ? [] : [
     {
