@@ -90,5 +90,6 @@ variable "name" {
 
 variable "disable_heavyweight_metrics" {
   description = "Disable some 'heavyweight' or unnecessary metrics"
+  type = bool
   default = false
 }
