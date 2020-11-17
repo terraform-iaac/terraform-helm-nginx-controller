@@ -3,8 +3,17 @@ controller:
     serviceMonitor:
       metricRelabelings:
         - sourceLabels: [ __name__ ]
-          regex: example_metric_name_number_1
+          regex: nginx_ingress_controller_response_size_bucket
           action: drop
         - sourceLabels: [ __name__ ]
-          regex: example_metric_name_number_2
+          regex: nginx_ingress_controller_request_duration_seconds_bucket
+          action: drop
+        - sourceLabels: [ __name__ ]
+          regex: nginx_ingress_controller_request_size_bucket
+          action: drop
+        - sourceLabels: [ __name__ ]
+          regex: nginx_ingress_controller_response_duration_seconds_bucket
+          action: drop
+        - sourceLabels: [ __name__ ]
+          regex: nginx_ingress_controller_bytes_sent_bucket
           action: drop
