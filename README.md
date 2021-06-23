@@ -63,10 +63,8 @@ module "nginx-controller" {
 ## Outputs
 | Name | Description |
 |------|:-----------:|
-| namespace | Namespace used by cert manager |
-| cluster\_issuer\_name | Created cluster issuer |
-| cluster\_issuer\_server | ACME Server used by Cluster Issuer |
-| cluster\_issuer\_private\_key\_name | Name of secrets, where cert manager stores private key | 
+| name | Namespace used by nginx controller |
+| namespace | Namespace used by nginx controller | 
 
 ## Terraform Requirements
 
