@@ -15,7 +15,7 @@ resource "google_compute_address" "ingress_ip_address" {
 }
 
 module "nginx-controller" {
-  source  = "terraform-iaac/nginx-controller/kubernetes"
+  source  = "terraform-iaac/nginx-controller/helm"
 
   ip_address = google_compute_address.ingress_ip_address.address
 }
@@ -24,7 +24,7 @@ module "nginx-controller" {
 #### AWS
 ```terraform
 module "nginx-controller" {
-  source  = "terraform-iaac/nginx-controller/kubernetes"
+  source  = "terraform-iaac/nginx-controller/helm"
 
   additional_set = [
     {
