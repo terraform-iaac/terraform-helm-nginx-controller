@@ -3,15 +3,21 @@ resource "helm_release" "application" {
   chart      = local.helm_chart
   namespace  = var.namespace
   repository = local.helm_repository
-  version    = local.helm_template_version
-
-  wait = "false"
+  version    = var.chart_version
 
   values = [var.disable_heavyweight_metrics ? file("${path.module}/templates/metrics-disable.yaml") : ""]
 
   set {
     name  = "controller.kind"
     value = var.controller_kind
+  }
+  set     {
+    name  = "controller.ingressClassResource.name"
+    value = var.ingress_class_name
+  }
+  set {
+    name  = "controller.ingressClassResource.default"
+    value = var.ingress_class_is_default
   }
   set {
     name  = "controller.daemonset.useHostPort"

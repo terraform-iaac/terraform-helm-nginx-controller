@@ -5,8 +5,11 @@ Terraform module used to create nginx ingress controller in Kubernetes via Helm.
 
 ## Usage
 
-#### For activate controller in ingress resource, please add this annotation to ingress:
-    "kubernetes.io/ingress.class"    = "nginx"
+### IngressClass 
+By default, all new ingresses use this controller as default. 
+
+If you have already default IngressClass specified, please set `ingress_class_is_default=false`. \
+In this case you should specify `ingressClassName` to your ingress manually.
 
 #### GCP
 ```terraform
@@ -47,6 +50,9 @@ module "nginx-controller" {
 |------|-------------|------|---------|:--------:|
 | name  | Name of created helm release | `string` | `ingress-nginx` | no |
 | namespace\_name  | Name of namespace where nginx controller should be deployed | `string` | `kube-system` | no |
+| chart\_version  | HELM Chart Version for controller ( It is not recommended to change )| `string` | `4.0.6` | no |
+| ingress\_class\_name  | IngressClass resource name | `string` | `nginx` | no |
+| ingress\_class\_is_default  | IngressClass resource default for cluster | `bool` | `true` | no |
 | ip_address | External Static Address for loadbalancer (Doesn't work with AWS) | `string` | n/a | no |
 | controller_kind | Controller type: DaemonSet, Deployment etc.. | `string` | `DaemonSet` | no |
 | controller_daemonset_useHostPort | Also use host ports(80,443) for pods. Node Ports in services will be untouched | `bool` | `false` | no |
@@ -65,6 +71,7 @@ module "nginx-controller" {
 |------|:-----------:|
 | name | Namespace used by nginx controller |
 | namespace | Namespace used by nginx controller | 
+| ingress\_class\_name | IngressClass name for this controller | 
 
 ## Terraform Requirements
 
@@ -72,3 +79,5 @@ module "nginx-controller" {
 |------|---------|
 | terraform | >= 0.13.0 |
 | helm | >= 2.1.0 |
+
+## Kubernetes version: `>=1.19`

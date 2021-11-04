@@ -9,6 +9,24 @@ variable "namespace" {
   default     = "kube-system"
 }
 
+variable "chart_version" {
+  type        = string
+  description = "HELM Chart Version for nginx controller"
+  default     = "4.0.6"
+}
+
+variable "ingress_class_name" {
+  type        = string
+  description = "IngressClass resource name"
+  default     = "nginx"
+}
+
+variable "ingress_class_is_default" {
+  type        = bool
+  description = "IngressClass resource default for cluster"
+  default     = true
+}
+
 variable "ip_address" {
   type        = string
   description = "External Static Address for loadbalancer (Doesn't work with AWS)"
@@ -60,7 +78,7 @@ variable "service_nodePort_https" {
 
 variable "metrics_enabled" {
   type        = bool
-  description = ""
+  description = "Allow exposing metrics for prometheus-operator"
   default     = false
 }
 variable "disable_heavyweight_metrics" {
