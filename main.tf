@@ -4,6 +4,7 @@ resource "helm_release" "application" {
   namespace  = var.namespace
   repository = local.helm_repository
   version    = var.chart_version
+  atomic     = var.atomic
 
   values = [var.disable_heavyweight_metrics ? file("${path.module}/templates/metrics-disable.yaml") : ""]
 
@@ -11,7 +12,7 @@ resource "helm_release" "application" {
     name  = "controller.kind"
     value = var.controller_kind
   }
-  set     {
+  set {
     name  = "controller.ingressClassResource.name"
     value = var.ingress_class_name
   }
