@@ -51,6 +51,7 @@ module "nginx-controller" {
 | name  | Name of created helm release | `string` | `ingress-nginx` | no |
 | namespace\_name  | Name of namespace where nginx controller should be deployed | `string` | `kube-system` | no |
 | chart\_version  | HELM Chart Version for controller ( It is not recommended to change )| `string` | `4.0.6` | no |
+| atomic  | If set, installation process purges chart on fail | `bool` | `false` | no |
 | ingress\_class\_name  | IngressClass resource name | `string` | `nginx` | no |
 | ingress\_class\_is_default  | IngressClass resource default for cluster | `bool` | `true` | no |
 | ip_address | External Static Address for loadbalancer (Doesn't work with AWS) | `string` | n/a | no |

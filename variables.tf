@@ -15,6 +15,12 @@ variable "chart_version" {
   default     = "4.0.6"
 }
 
+variable "atomic" {
+  type        = bool
+  description = "If set, installation process purges chart on fail"
+  default     = false
+}
+
 variable "ingress_class_name" {
   type        = string
   description = "IngressClass resource name"
