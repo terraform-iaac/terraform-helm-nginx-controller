@@ -49,7 +49,7 @@ module "nginx-controller" {
 | Name | Description | Type | Default |  Required |
 |------|-------------|------|---------|:--------:|
 | name  | Name of created helm release | `string` | `ingress-nginx` | no |
-| namespace\_name  | Name of namespace where nginx controller should be deployed | `string` | `kube-system` | no |
+| namespace  | Name of namespace where nginx controller should be deployed | `string` | `kube-system` | no |
 | chart\_version  | HELM Chart Version for controller ( It is not recommended to change )| `string` | `4.0.6` | no |
 | atomic  | If set, installation process purges chart on fail | `bool` | `false` | no |
 | ingress\_class\_name  | IngressClass resource name | `string` | `nginx` | no |
