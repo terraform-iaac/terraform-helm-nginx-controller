@@ -12,7 +12,7 @@ variable "namespace" {
 variable "chart_version" {
   type        = string
   description = "HELM Chart Version for nginx controller"
-  default     = "4.0.6"
+  default     = "4.0.19"
 }
 
 variable "atomic" {

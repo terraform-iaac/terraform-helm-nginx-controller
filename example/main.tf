@@ -12,7 +12,7 @@ module "nginx-controller" {
 
 ### AWS
 module "nginx-controller" {
-  source  = "../"
+  source = "../"
 
   additional_set = [
     {
