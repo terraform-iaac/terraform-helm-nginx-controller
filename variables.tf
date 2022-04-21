@@ -93,6 +93,12 @@ variable "disable_heavyweight_metrics" {
   default     = false
 }
 
+variable "create_namespace" {
+  type        = bool
+  description = "Create a namespace"
+  default     = false
+}
+
 variable "additional_set" {
   description = "Add additional set for helm"
   default     = []
