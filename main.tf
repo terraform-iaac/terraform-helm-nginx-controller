@@ -6,6 +6,8 @@ resource "helm_release" "application" {
   version    = var.chart_version
   atomic     = var.atomic
   create_namespace = var.create_namespace
+  wait = var.wait
+  timeout = var.timeout
 
   values = [var.disable_heavyweight_metrics ? file("${path.module}/templates/metrics-disable.yaml") : ""]
 
