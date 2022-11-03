@@ -112,7 +112,7 @@ variable "wait" {
 
 variable "timeout" {
   type        = number
-  description = " Time in seconds to wait for any individual kubernetes operation"
+  description = "Time in seconds to wait for any individual kubernetes operation"
   default     = 300
 }
 

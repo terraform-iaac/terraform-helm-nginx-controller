@@ -66,6 +66,8 @@ module "nginx-controller" {
 | metrics_enabled | Allow exposing metrics for prometheus-operator | `bool` | `false` | no |
 | disable_heavyweight_metrics | Disable some 'heavyweight' or unnecessary metrics | `bool` | `false` | no |
 | additional\_set | Additional sets to Helm | <pre>list(object({<br>    name  = string<br>    value = string<br>    type  = string // Optional<br>  }))</pre> | `[]` |  no |
+| wait | Will wait until all resources are in a ready state" | `bool` | `true` | no |
+| timeout | Time in seconds to wait for any individual kubernetes operation | `number` | `300` | no |
 
 ## Outputs
 | Name | Description |
