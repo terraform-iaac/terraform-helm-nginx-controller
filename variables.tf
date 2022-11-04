@@ -103,3 +103,16 @@ variable "additional_set" {
   description = "Add additional set for helm"
   default     = []
 }
+
+variable "wait" {
+  description = "Will wait until all resources are in a ready state"
+  type        = bool
+  default     = true
+}
+
+variable "timeout" {
+  type        = number
+  description = "Time in seconds to wait for any individual kubernetes operation"
+  default     = 300
+}
+
