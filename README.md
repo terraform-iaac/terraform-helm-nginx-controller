@@ -78,9 +78,9 @@ module "nginx-controller" {
 
 ## Terraform Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >= 0.13.0 |
-| helm | >= 2.1.0 |
+| Name | Version  |
+|------|----------|
+| terraform | >= 1.0.0 |
+| helm | >= 2.5.0 |
 
 ## Kubernetes version: `>=1.19`

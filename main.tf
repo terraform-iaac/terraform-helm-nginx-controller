@@ -1,13 +1,13 @@
 resource "helm_release" "application" {
-  name       = var.name
-  chart      = local.helm_chart
-  namespace  = var.namespace
-  repository = local.helm_repository
-  version    = var.chart_version
-  atomic     = var.atomic
+  name             = var.name
+  chart            = local.helm_chart
+  namespace        = var.namespace
+  repository       = local.helm_repository
+  version          = var.chart_version
+  atomic           = var.atomic
   create_namespace = var.create_namespace
-  wait = var.wait
-  timeout = var.timeout
+  wait             = var.wait
+  timeout          = var.timeout
 
   values = [var.disable_heavyweight_metrics ? file("${path.module}/templates/metrics-disable.yaml") : ""]
 

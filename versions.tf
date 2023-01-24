@@ -1,7 +1,7 @@
 terraform {
-  required_version = ">= 0.13.0"
+  required_version = ">= 1.0.0"
 
   required_providers {
-    helm = ">= 2.1.0"
+    helm = ">= 2.5.0"
   }
 }
