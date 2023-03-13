@@ -100,7 +100,12 @@ variable "create_namespace" {
 }
 
 variable "additional_set" {
-  description = "Add additional set for helm"
+  description = "Add additional settings for helm"
+  type = list(object({
+    name = string
+    value = string
+    type = string
+  }))
   default     = []
 }
 
