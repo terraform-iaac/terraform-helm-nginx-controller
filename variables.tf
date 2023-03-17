@@ -12,7 +12,7 @@ variable "namespace" {
 variable "chart_version" {
   type        = string
   description = "HELM Chart Version for nginx controller"
-  default     = "4.4.2"
+  default     = "4.5.2"
 }
 
 variable "atomic" {
@@ -100,8 +100,16 @@ variable "create_namespace" {
 }
 
 variable "additional_set" {
-  description = "Add additional set for helm"
-  default     = []
+  description = "Optional set for additional helm settings"
+  type = set(
+    object(
+      {
+        name  = string
+        value = string
+        type  = optional(string)
+      }
+    )
+  )
 }
 
 variable "wait" {
