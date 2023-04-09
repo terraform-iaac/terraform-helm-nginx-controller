@@ -69,7 +69,7 @@ variable "publish_service" {
 variable "define_nodePorts" {
   type        = bool
   description = "By default service using NodePorts. It can be generated automatically, or you can assign this ports number"
-  default     = true
+  default     = false
 }
 variable "service_nodePort_http" {
   type        = string
