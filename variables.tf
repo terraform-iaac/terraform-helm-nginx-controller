@@ -101,7 +101,8 @@ variable "create_namespace" {
 
 variable "additional_set" {
   description = "Optional set for additional helm settings"
-  type = set(
+  default = []
+/*  type = set(
     object(
       {
         name  = string
@@ -109,7 +110,7 @@ variable "additional_set" {
         type  = optional(string)
       }
     )
-  )
+  )*/
 }
 
 variable "wait" {
