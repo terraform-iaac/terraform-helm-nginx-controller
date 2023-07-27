@@ -11,19 +11,6 @@ By default, all new ingresses use this controller as default.
 If you have already default IngressClass specified, please set `ingress_class_is_default=false`. \
 In this case you should specify `ingressClassName` to your ingress manually.
 
-#### GCP
-```terraform
-resource "google_compute_address" "ingress_ip_address" {
-  name = "nginx-controller"
-}
-
-module "nginx-controller" {
-  source  = "terraform-iaac/nginx-controller/helm"
-
-  ip_address = google_compute_address.ingress_ip_address.address
-}
-```
-
 #### AWS
 ```terraform
 module "nginx-controller" {
@@ -41,6 +28,39 @@ module "nginx-controller" {
       type  = "string"
     }
   ]
+}
+```
+
+#### GCP
+```terraform
+# Static IP
+resource "google_compute_address" "ingress_ip_address" {
+  name = "nginx-controller"
+}
+
+module "nginx-controller" {
+  source  = "terraform-iaac/nginx-controller/helm"
+
+  # Optional
+  ip_address = google_compute_address.ingress_ip_address.address
+}
+```
+
+#### AZURE
+```terraform
+# Static IP
+resource "azurerm_public_ip" "nginx_controller" {
+  resource_group_name = "my-resource-group-name"
+  location            = "my-location"
+
+  name              = "nginx-controller"
+  allocation_method = "Static"
+}
+
+module "nginx-controller" {
+  source  = "terraform-iaac/nginx-controller/helm"
+
+  ip_address = azurerm_public_ip.nginx_controller.ip_address
 }
 ```
 
