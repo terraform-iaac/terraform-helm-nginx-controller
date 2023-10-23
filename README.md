@@ -102,6 +102,6 @@ module "nginx-controller" {
 | Name | Version  |
 |------|----------|
 | terraform | >= 1.3.0 |
-| helm | >= 2.5.0 |
+| helm | >= 2.10.0 |
 
 ## Kubernetes version: `>=1.19`
