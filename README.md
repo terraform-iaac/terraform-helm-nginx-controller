@@ -86,6 +86,7 @@ module "nginx-controller" {
 | metrics_enabled | Allow exposing metrics for prometheus-operator | `bool` | `false` | no |
 | disable_heavyweight_metrics | Disable some 'heavyweight' or unnecessary metrics | `bool` | `false` | no |
 | additional\_set | Additional sets to Helm | <pre>list(object({<br>    name  = string<br>    value = string<br>    type  = string // Optional<br>  }))</pre> | `[]` |  no |
+| additional\_set\_list | Additional sets to Helm via set_list | <pre>list(object({<br>    name  = string<br>    value = list<br>  }))</pre> | `[]` |  no |
 | wait | Will wait until all resources are in a ready state" | `bool` | `true` | no |
 | timeout | Time in seconds to wait for any individual kubernetes operation | `number` | `300` | no |
 
@@ -101,6 +102,6 @@ module "nginx-controller" {
 | Name | Version  |
 |------|----------|
 | terraform | >= 1.3.0 |
-| helm | >= 2.5.0 |
+| helm | >= 2.10.0 |
 
 ## Kubernetes version: `>=1.19`

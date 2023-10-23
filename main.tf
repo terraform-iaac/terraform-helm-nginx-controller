@@ -73,4 +73,12 @@ resource "helm_release" "application" {
       type  = lookup(set.value, "type", null)
     }
   }
+
+  dynamic "set_list" {
+    for_each = var.additional_set_list
+    content {
+      name  = set_list.value.name
+      value = set_list.value.value
+    }
+  }
 }

@@ -113,6 +113,11 @@ variable "additional_set" {
   )*/
 }
 
+variable "additional_set_list" {
+  description = "Optional set_list for additional helm settings"
+  default = []
+}
+
 variable "wait" {
   description = "Will wait until all resources are in a ready state"
   type        = bool
