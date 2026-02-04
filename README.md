@@ -106,6 +106,6 @@ module "nginx-controller" {
 
 ## Kubernetes version: `>=1.29`
 
-Ingress Nginx HELM Chart version: v4.13.0: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
+Ingress Nginx HELM Chart version: v4.14.3: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
 
 Source: https://github.com/kubernetes/ingress-nginx
